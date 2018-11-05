@@ -21,3 +21,8 @@ training_indices, validation_indices = training_indices, testing_indices = train
 tpot = TPOTClassifier(verbosity=3, max_time_mins=2, max_eval_time_mins=0.04, generations=200, population_size=200, n_jobs=-1)
 tpot.fit(titanic_new[training_indices], titanic_class[training_indices])
 
+
+# Larger Pipleines ~ 2200 Pipeline 
+tpot = TPOTClassifier(verbosity=3, generations=10, population_size=200, n_jobs=-1)
+tpot.fit(titanic_new[training_indices], titanic_class[training_indices])
+
